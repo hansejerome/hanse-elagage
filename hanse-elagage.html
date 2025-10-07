@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hanse Élagage - Élagage, abattage et aménagement paysager</title>
+  <meta name="description" content="Hanse Élagage propose des services professionnels d'élagage, abattage sécurisé et aménagement paysager. Contactez-nous pour un devis gratuit.">
+  <link rel="icon" href="logo_solo.png" type="image/png">
+
+
+  <!-- AOS CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary-color: #2E7243; 
+      --secondary-color: #A8D5BA; 
+      --text-color: #333333;
+      --background-color: #F4F4F4;
+      --accent-color: #FF9800; 
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Roboto', sans-serif; line-height: 1.6; color: var(--text-color); }
+
+    section { padding: 60px 20px; text-align: center; min-height: 75vh; }
+
+    h1, h2 { margin-bottom: 20px; }
+    p { max-width: 600px; margin: 0 auto 20px; }
+
+    button {
+      padding: 12px 24px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      background-color: var(--primary-color);
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover { background-color: var(--accent-color); }
+
+    /* Hero avec image banner responsive */
+/* Hero avec image banner responsive */
+.hero {
+  position: relative; /* pour positionner le bouton */
+  background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('banner.jpg') center/cover no-repeat;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; /* placer bouton vers le bas */
+  min-height: 75vh;
+}
+
+/* Bouton spécifique Hero */
+.hero-btn {
+  background-color: white;
+  color: var(--primary-color); /* vert logo */
+  font-weight: bold;
+  padding: 14px 28px;
+  border-radius: 5px;
+  border: none;
+  position: absolute;
+  bottom: 50px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.hero-btn:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-2px);
+}
+
+
+    /* Services */
+    .services { background-color: var(--background-color); }
+    .services .service-cards { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 40px; }
+    .service-card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); flex: 1 1 250px; max-width: 300px; text-align: left; }
+    .service-card h3 { color: var(--primary-color); margin-bottom: 12px; }
+    .service-card p { font-size: 14px; line-height: 1.5; }
+
+    /* Galerie */
+/* Galerie */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  margin-top: 40px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 220px; /* fixe la hauteur */
+  object-fit: cover; /* recadre sans déformer */
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+
+/* Pourquoi nous choisir */
+.why-us {
+  background-color: var(--background-color); /* même style que témoignages */
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.why-us h2 {
+  margin-bottom: 40px;
+  color: var(--primary-color);
+}
+
+.why-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.why-item {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  text-align: left;
+}
+
+.why-item h3 {
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+
+/* --- Section Contact compacte --- */
+.contact {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 20px 20px; /* 🔹 beaucoup moins haut */
+  display: flex;
+  justify-content: center;
+}
+
+.contact-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* 🔹 réduit l’espace entre les 2 cadres */
+  max-width: 1000px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+/* Cadres blancs */
+.contact-box {
+  background-color: white;
+  color: var(--text-color);
+  flex: 1 1 420px;
+  padding: 20px 25px; /* 🔹 moins de marge interne */
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+/* Bloc gauche */
+.left-box h2 {
+  color: var(--primary-color);
+  margin-bottom: 8px;
+}
+
+/* Logo dans le bloc droit */
+.contact-logo {
+  max-width: 250px;     
+  height: auto;         /* garde les proportions */
+  display: block;
+  margin: 0 auto;       /* centre horizontalement dans le bloc */
+}
+
+.left-box p {
+  margin-bottom: 10px;
+}
+
+.contact-info p {
+  margin: 4px 0;
+}
+
+.contact-info a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+.contact-flex {
+  display: flex;
+  justify-content: space-between; /* gauche = infos, droite = bouton FB */
+  align-items: center;            /* verticalement aligné */
+  gap: 20px;                      /* espace entre les colonnes */
+  margin-top: 15px;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.contact-info p {
+  margin: 4px 0;
+}
+
+.facebook-link a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background 0.3s;
+}
+
+.facebook-link a:hover {
+  background-color: #256835;
+}
+
+
+/* Facebook */
+.facebook-link {
+  margin-top: 10px;
+}
+
+.facebook-link a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background 0.3s;
+}
+
+.facebook-link a:hover {
+  background-color: #256835;
+}
+
+/* ✅ Correction définitive pour la section contact */
+section.contact {
+  min-height: auto !important;  /* annule le 75vh */
+  height: auto !important;      /* force la hauteur selon le contenu */
+  padding: 40px 20px;           /* marges internes plus légères */
+}
+
+/* Bloc droit (slogan) */
+.right-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  color: var(--primary-color);
+  text-align: center;
+  font-size: 1.3rem;
+  font-style: italic;
+  font-weight: bold;
+  padding: 20px; /* 🔹 réduit aussi ici */
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .contact-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-box {
+    max-width: 600px;
+  }
+
+
+/* Bloc droit (slogan) */
+.right-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  color: var(--primary-color);
+  text-align: center;
+  font-size: 1.5rem;
+  font-style: italic;
+  font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .contact-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-box {
+    max-width: 600px;
+  }
+
+  .right-box {
+    font-size: 1.3rem;
+    padding: 30px;
+  }
+}
+
+
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .service-card { max-width: 100%; }
+      .hero { min-height: 60vh; background-size: contain; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hanse Elagage Section -->
+<section class="hero" data-aos="fade-down">
+  <button class="hero-btn" data-aos="zoom-in" data-aos-delay="200" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });">
+    Contactez-moi
+  </button>
+</section>
+
+  <!-- Services Section -->
+  <section class="services" data-aos="fade-up">
+    <h2>Mes Services</h2>
+    <p>Je propose des services professionnels pour vos arbres et espaces verts.</p>
+    <div class="service-cards">
+      <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+        <h3>🌳 Élagage des arbres</h3>
+        <p>Je pratique un élagage respectueux et responsable, afin de préserver la santé et la longévité de vos arbres. Mon objectif est d’assurer leur sécurité tout en favorisant leur croissance naturelle, dans le respect de l’environnement.</p>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+        <h3>🪓 Abattage sécurisé</h3>
+        <p>L’abattage d’arbres peut être risqué si l’on n’est pas préparé. Je mets en place toutes les mesures de sécurité nécessaires et vous conseille sur la meilleure approche pour protéger votre propriété et votre environnement tout en réalisant un travail efficace.</p>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+        <h3>✂ Taille des haies et fruitiers</h3>
+        <p>Je taille vos haies et arbres fruitiers avec soin pour sublimer votre jardin et optimiser la production de fruits. Chaque geste est pensé pour favoriser la santé des plantes et créer un espace harmonieux et agréable.</p>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+        <h3>🏡 Aménagement paysager</h3>
+        <p>J’aménage vos espaces verts pour qu’ils deviennent un véritable lieu de bien-être. Chaque choix, du design à l’entretien, est guidé par la volonté de créer un jardin esthétique, fonctionnel et respectueux de la nature.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galerie Section -->
+  <section class="gallery-section" data-aos="fade-up">
+    <h2>Galerie</h2>
+    <p>Découvrez quelques-unes de mes réalisations et l'entretien d'arbres.</p>
+    <div class="gallery">
+      <img src="chantier.jpg" alt="Travail d'élagage réalisé par Hanse Élagage">
+      <img src="chantier3.jpg" alt="Travail d'élagage réalisé par Hanse Élagage">
+      <img src="chantier4.jpg" alt="Travail d'élagage réalisé par Hanse Élagage">
+      <img src="chantier5.jpg" alt="Travail d'élagage réalisé par Hanse Élagage">
+    </div>
+  </section>
+
+<!-- Pourquoi nous choisir Section -->
+<section class="why-us" data-aos="fade-up">
+  <h2>Pourquoi Hanse Élagage ?</h2>
+  <div class="why-list">
+    <div class="why-item" data-aos="fade-right" data-aos-delay="100">
+      <h3>✅ Travail sécurisé</h3>
+      <p>Chaque intervention est réalisée avec professionnalisme et toutes les mesures de sécurité nécessaires pour protéger vos arbres, votre maison et votre famille.</p>
+    </div>
+    <div class="why-item" data-aos="fade-left" data-aos-delay="200">
+      <h3>🌳 Respect de la nature</h3>
+      <p>Je privilégie des méthodes responsables qui préservent la santé et la longévité des arbres, dans le respect de l’environnement.</p>
+    </div>
+    <div class="why-item" data-aos="fade-right" data-aos-delay="300">
+      <h3>⏱ Intervention rapide</h3>
+      <p>Disponible et réactif, je m’adapte à vos besoins pour intervenir rapidement et efficacement sur vos espaces verts.</p>
+    </div>
+    <div class="why-item" data-aos="fade-left" data-aos-delay="400">
+      <h3>💰 Devis gratuit</h3>
+      <p>Transparence et simplicité : vous recevez un devis clair et gratuit avant toute intervention.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Section Contact -->
+<section class="contact" id="contact" data-aos="fade-up">
+  <div class="contact-wrapper">
+    <div class="contact-box left-box">
+  <h2>Contactez-moi</h2>
+  <p>Appelez-moi ou envoyez-moi un email pour obtenir un devis gratuit.</p>
+
+  <div class="contact-flex">
+    <div class="contact-info">
+      <p><strong>Téléphone :</strong> <a href="tel:+32499190388">+32 (0) 499 19 03 88</a></p>
+      <p><strong>Email :</strong> <a href="mailto:hanse.elagage@gmail.com">hanse.elagage@gmail.com</a></p>
+    </div>
+
+    <div class="facebook-link">
+      <a href="https://www.facebook.com/hanse.elagage" target="_blank" rel="noopener">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="white">
+          <path d="M22.675 0h-21.35C.597 0 0 .597 0 1.333v21.333C0 23.403.597 24 
+          1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 
+          1.893-4.788 4.66-4.788 1.325 0 2.463.099 2.794.143v3.24h-1.918
+          c-1.505 0-1.797.716-1.797 1.766v2.316h3.587l-.467 
+          3.622h-3.12V24h6.116C23.403 24 24 23.403 24 
+          22.667V1.333C24 .597 23.403 0 22.675 0z"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+
+    <div class="contact-box right-box">
+      <img src="logo_full.png" alt="Hanse Élagage" class="contact-logo">
+    </div>
+  </div>
+</section>
+
+
+
+
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: false,
+    });
+  </script>
+
+</body>
+</html>

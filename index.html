@@ -60,6 +60,18 @@ button:hover { background-color: var(--accent-color); }
   margin: 0; /* pas de marge */
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* empêche le retour à la ligne */
+  border: 0;
+}
+
 .hero-btn {
   position: absolute;
   bottom: 20px; /* réduit un peu la valeur */
@@ -188,6 +200,7 @@ button:hover { background-color: var(--accent-color); }
 <body>
 
 <div class="hero" data-aos="fade-down">
+  <h1 class="sr-only">Hanse Élagage – Élagage et aménagement paysager</h1>
   <img src="banner.jpg" alt="Hanse Élagage">
   <button class="hero-btn" data-aos="zoom-in" data-aos-delay="200" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });">Contactez-moi</button>
 </div>

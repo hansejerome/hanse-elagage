@@ -145,6 +145,9 @@ button:hover { background-color: var(--accent-color); }
 .facebook-link a:hover { background-color: #256835; }
 .right-box { display: flex; align-items: center; justify-content: center; background: white; color: var(--primary-color); text-align: center; font-size: 1.3rem; font-style: italic; font-weight: bold; padding: 20px; }
 .contact-logo { max-width: 200px; height: auto; display: block; margin: 0 auto; }
+.contact-info p a {
+  display: inline-block;
+}
 
 
 @media (max-width: 900px) {
@@ -162,6 +165,23 @@ button:hover { background-color: var(--accent-color); }
   .service-card { max-width: 100%; }
   .hero { height: 30vh; }
   .hero-btn { bottom: 20px; padding: 12px 24px; font-size: 14px; }
+}
+@media (max-width: 600px) {
+  .contact-flex {
+    flex-direction: column; /* empile les éléments */
+    align-items: flex-start; /* aligne à gauche */
+    gap: 10px; /* espace entre téléphone/email et bouton */
+  }
+
+  .contact-info p {
+    white-space: nowrap; /* empêche le retour à la ligne sur les deux-points */
+    overflow: hidden; /* si le texte dépasse, il sera coupé */
+    text-overflow: ellipsis; /* optionnel, pour ajouter "..." si nécessaire */
+  }
+
+  .facebook-link {
+    align-self: flex-end; /* place le bouton en bas à droite du conteneur */
+  }
 }
 </style>
 </head>
